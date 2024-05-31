@@ -61,7 +61,7 @@ document.addEventListener("keydown", function(event) {
       setTimeout(() => {
         playSound(gamePattern[i]);
         animatePress(gamePattern[i]);
-      }, 500 * i); // Delay each step by 500 milliseconds
+      }, 500 * i);
     }
   }
   
