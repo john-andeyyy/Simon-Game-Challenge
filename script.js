@@ -15,16 +15,20 @@ document.addEventListener("keydown", function(event) {
   document.querySelectorAll(".btn").forEach(button => {
     button.addEventListener("click", function() {
       let userChosenColor = this.id;
+      //console.log(this.id)
       userClickedPattern.push(userChosenColor);
   
       playSound(userChosenColor);
       animatePress(userChosenColor);
-  
-      checkAnswer(userClickedPattern.length - 1);
+
+      console.log(userClickedPattern.length - 1)
+
+      checkAnswer(userClickedPattern.length -1);
     });
   });
   
   function checkAnswer(currentLevel) {
+    console.log(currentLevel)
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
       if (userClickedPattern.length === gamePattern.length) {
         setTimeout(() => {
@@ -53,7 +57,6 @@ document.addEventListener("keydown", function(event) {
     let randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
   
-    // Replay the sequence
     for (let i = 0; i < gamePattern.length; i++) {
       setTimeout(() => {
         playSound(gamePattern[i]);
